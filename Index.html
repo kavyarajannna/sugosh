@@ -21,9 +21,24 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.838)), url(/Screenshot\ 2025-01-30\ 233743.png);
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.838)),
+                url('/Screenshot%202025-01-30%20233743.png');
+            background-size: auto;
+            /* Ensures repeating works */
+            background-repeat: repeat;
+            /* Repeats the image */
+            background-position: top left;
         }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: auto;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+        }
+
 
         /* Header */
         /* Header */
@@ -52,9 +67,12 @@
             text-decoration: none;
             font-size: 18px;
         }
+
         .call-now a {
-        text-decoration: none; /* Remove the blue underline */
-    }
+            text-decoration: none;
+            /* Remove the blue underline */
+        }
+
         .call-now button {
             background: transparent;
             border: none;
@@ -262,7 +280,7 @@
         }
 
 
-       
+
         /* Footer Styling */
         footer {
             background-color: #e1c99c;
@@ -520,7 +538,7 @@
             }
         }
 
-        
+
         /* WhatsApp Icon */
         .whatsapp-icon {
             position: fixed;
@@ -570,8 +588,8 @@
             }
         }
 
-          /* Fixed Bottom Buttons Section */
-          .fixed-bottom-buttons {
+        /* Fixed Bottom Buttons Section */
+        .fixed-bottom-buttons {
             display: none;
             /* Hidden by default */
         }
@@ -641,196 +659,224 @@
             padding-bottom: 80px;
             /* Make room for fixed buttons on mobile */
         }
+
         /* Popup Background */
-#popupOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    padding: 10px;
-    box-sizing: border-box;
-}
+        #popupOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
-/* Popup Content */
-#popupForm h2 {
-    text-align: center; /* Horizontally centers the text */
-    margin: 0 0 20px 0;  /* Adds space below the heading */
-    color: #10375C;
-}
+        /* Popup Content */
+        #popupForm h2 {
+            text-align: center;
+            /* Horizontally centers the text */
+            margin: 0 0 20px 0;
+            /* Adds space below the heading */
+            color: #10375C;
+        }
 
-#popupForm {
-    background: linear-gradient(135deg, rgba(255, 165, 0, 0.9), rgba(255, 255, 0, 0.9)); /* Orange-yellow light gradient */
-    padding: 20px;  /* Reduced padding */
-    border-radius: 10px;
-    width: 400px;
-    max-width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    text-align: left;
-    overflow: hidden; /* Ensures close button stays inside */
-    max-height: 650px;  /* Set max height to 650px */
-    height: auto; /* Ensures the height adjusts based on content */
-}
+        #popupForm {
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.9), rgba(255, 255, 0, 0.9));
+            /* Orange-yellow light gradient */
+            padding: 20px;
+            /* Reduced padding */
+            border-radius: 10px;
+            width: 400px;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+            /* Ensures close button stays inside */
+            max-height: 650px;
+            /* Set max height to 650px */
+            height: auto;
+            /* Ensures the height adjusts based on content */
+        }
 
-/* Label Styling */
-label {
-   
-    display: block; /* Ensures label is a block element */
-}
+        /* Label Styling */
+        label {
 
-/* Close Button */
-#closeBtn {
-    position: absolute;
-    top: 10px; /* Close button inside the box */
-    right: 10px; /* Adjusted to place inside the box */
-    background-color: transparent;
-    border: none;
-    font-size: 30px; /* Increased size */
-    cursor: pointer;
-    animation: pulse 1.5s infinite;
-}
+            display: block;
+            /* Ensures label is a block element */
+        }
 
-/* Pulse Animation */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+        /* Close Button */
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            /* Close button inside the box */
+            right: 10px;
+            /* Adjusted to place inside the box */
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            /* Increased size */
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
 
-/* Form Fields */
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 5px; /* Reduced margin below fields */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 16px;
-}
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
 
-/* Textarea */
-textarea {
-    height: 80px; /* Reduced height for textarea */
-}
+            50% {
+                transform: scale(1.2);
+            }
 
-/* Button Styles */
-.button-8766 {
-    all: unset;
-    width: 100px;
-    height: 40px;
-    font-size: 16px;
-    background: transparent;
-    border: none;
-    position: relative;
-    color: #f0f0f0;
-    cursor: pointer;
-    z-index: 1;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
+            100% {
+                transform: scale(1);
+            }
+        }
 
-.button-8766::after,
-.button-8766::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -99999;
-    transition: all .4s;
-}
+        /* Form Fields */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 5px;
+            /* Reduced margin below fields */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
 
-.button-8766::before {
-    transform: translate(0%, 0%);
-    width: 100%;
-    height: 100%;
-    background: #28282d;
-    border-radius: 10px;
-}
+        /* Textarea */
+        textarea {
+            height: 80px;
+            /* Reduced height for textarea */
+        }
 
-.button-8766::after {
-    transform: translate(10px, 10px);
-    width: 35px;
-    height: 35px;
-    background: #ffffff15;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: 50px;
-}
+        /* Button Styles */
+        .button-8766 {
+            all: unset;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
 
-.button-8766:hover::before {
-    transform: translate(5%, 20%);
-    width: 110%;
-    height: 110%;
-}
+        .button-8766::after,
+        .button-8766::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
 
-.button-8766:hover::after {
-    border-radius: 10px;
-    transform: translate(0, 0);
-    width: 100%;
-    height: 100%;
-}
+        .button-8766::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #28282d;
+            border-radius: 10px;
+        }
 
-.button-8766:active::after {
-    transition: 0s;
-    transform: translate(0, 5%);
-}
+        .button-8766::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
 
-/* Media Queries for responsiveness */
-@media screen and (max-width: 768px) {
-    #popupForm {
-        width: 90%;
-        padding: 15px; /* Reduced padding */
-    }
-    #closeBtn {
-        font-size: 35px; /* Slightly bigger close button on smaller screens */
-    }
-}
+        .button-8766:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
 
-@media screen and (max-width: 480px) {
-    .button-8766 {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-    #popupForm {
-        width: 90%;
-        padding: 15px;
-    }
-    #closeBtn {
-        font-size: 40px; /* Close button even bigger for small screens */
-    }
-}
-  /* Scoped styles inside .testimonial-section */
-  .testimonial-section {
-    width: 100%;
-    height: 50vh; /* Optional: Set the height to fill the entire viewport */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(/41174.jpg); /* Add your background image path here */
-    background-size: cover; /* Ensures the image covers the entire section without distortion */
-    background-position: center; /* Centers the image within the section */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-}
+        .button-8766:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-8766:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+                /* Reduced padding */
+            }
+
+            #closeBtn {
+                font-size: 35px;
+                /* Slightly bigger close button on smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .button-8766 {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+            }
+
+            #closeBtn {
+                font-size: 40px;
+                /* Close button even bigger for small screens */
+            }
+        }
+
+        /* Scoped styles inside .testimonial-section */
+        .testimonial-section {
+            width: 100%;
+            height: 50vh;
+            /* Optional: Set the height to fill the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(/41174.jpg);
+            /* Add your background image path here */
+            background-size: cover;
+            /* Ensures the image covers the entire section without distortion */
+            background-position: center;
+            /* Centers the image within the section */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+        }
 
 
         .testimonial-container {
@@ -906,91 +952,94 @@ textarea {
         .right {
             right: 10px;
         }
-/* Gallery Section Styles */
-.gallery565 {
-  padding: 50px 20px;
-  text-align: center;
- 
-}
+
+        /* Gallery Section Styles */
+        .gallery565 {
+            padding: 50px 20px;
+            text-align: center;
+
+        }
 
 
-.gallery565 h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
+        .gallery565 h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
 
-/* Horizontal Line Animation */
-.underline {
-  width: 60px;
-  height: 3px;
-  background-color: #000;
-  margin: 20px auto;
-  transform: scaleX(0);
-  animation: lineAnimation 1s forwards;
-}
+        /* Horizontal Line Animation */
+        .underline {
+            width: 60px;
+            height: 3px;
+            background-color: #000;
+            margin: 20px auto;
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
 
-@keyframes lineAnimation {
-  to {
-    transform: scaleX(1);
-  }
-}
+        @keyframes lineAnimation {
+            to {
+                transform: scaleX(1);
+            }
+        }
 
-/* Gallery Container */
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-items: center;
-}
+        /* Gallery Container */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
 
-.gallery-item {
-  width: 350px; /* Increased width */
-  height: 250px; /* Reduced height */
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  transition: transform 0.3s ease-in-out;
-}
+        .gallery-item {
+            width: 350px;
+            /* Increased width */
+            height: 250px;
+            /* Reduced height */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
 
-/* Hover Effect */
-.gallery-item:hover {
-  transform: scale(1.05);
-}
+        /* Hover Effect */
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .gallery-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
-@media (max-width: 900px) {
-  .gallery-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+        @media (max-width: 900px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-@media (max-width: 600px) {
-  .gallery-container {
-    grid-template-columns: 1fr;
-  }
-}
+        @media (max-width: 600px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
 
-  /* Section Styles */
-        
-  .responsive-section {
+        /* Section Styles */
+
+        .responsive-section {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -1021,7 +1070,14 @@ textarea {
             min-height: 400px;
         }
 
-
+        .box h3 {
+            color: #1d2833;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
 
 
 
@@ -1042,14 +1098,18 @@ textarea {
             margin: 15px 0;
         }
 
-        .box h3 {
+        /* .box h3 {
             font-size: 18px;
             margin-bottom: 10px;
             min-height: 50px;
-        }
+        } */
 
         .box p {
-            font-size: 14px;
+            font-size: 1.2857142858rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #1d2833;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
             margin-bottom: 20px;
             flex-grow: 1;
         }
@@ -1114,70 +1174,93 @@ textarea {
         .responsive-section+.responsive-section {
             margin-top: 40px;
         }
-         /* Styles for Types of Pooja Heading */
-.types-pooja-heading {
-    text-align: center;
-    margin-bottom: 40px;  /* Space between heading and responsive section */
-}
 
-.types-pooja-heading h2 {
-    font-size: 2rem;  /* Adjust font size as needed */
-    font-weight: bold;
-    color: #333;  /* Text color */
-}
-/* Section 2: Scroll Animation and Styling */
-#section2 {
-    text-align: center;
-    /* background-image: url(/SL-040522-49460-117.jpg); */
-    background-size: cover; /* Ensures the image covers the section without distortion */
-    background-position: center; /* Centers the image within the section */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    padding: 40px 10%;
-}
+        /* Styles for Types of Pooja Heading */
+        .types-pooja-heading {
 
-#section2 p {
-    font-size: 1.2857142857rem;
-    line-height: 1.875rem;
-    font-weight: 400;
-    color: #1d2833;
-    font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
+            text-align: center;
+            margin-bottom: 40px;
+            /* Space between heading and responsive section */
+        }
 
-#section2 h2 {
-    font-size: 2.2857142858rem;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: .5rem;
-    color: #1d2833;
-    font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
+        .types-pooja-heading p {
+            font-size: 1.2857142858rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #1d2833;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
 
-#section2 h2.scroll-animate,
-#section2 p.scroll-animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-    #section1 {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #section2 {
-        padding: 40px 5%;
-    }
-}
+        .types-pooja-heading h2 {
+            color: #1d2833;
+            font-size: 2.2875rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
 
 
- /* Hero Section Styles */
-               /* Hero Section Styles */
-               .hero-section {
+        /* Section 2: Scroll Animation and Styling */
+        #section2 {
+            text-align: center;
+            /* background-image: url(/SL-040522-49460-117.jpg); */
+            background-size: cover;
+            /* Ensures the image covers the section without distortion */
+            background-position: center;
+            /* Centers the image within the section */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            padding: 40px 10%;
+        }
+
+        #section2 p {
+text-align: justify;
+            font-size: 1.2857142857rem;
+            line-height: 1.875rem;
+            font-weight: 400;
+            color: #1d2833;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        #section2 h2 {
+            text-align: center;
+            font-size: 2.2857142858rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: .5rem;
+            color: #1d2833;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        #section2 h2.scroll-animate,
+        #section2 p.scroll-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            #section1 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #section2 {
+                padding: 40px 5%;
+            }
+        }
+
+
+        /* Hero Section Styles */
+        /* Hero Section Styles */
+        .hero-section {
             position: relative;
             width: 100%;
             height: 60vh;
@@ -1247,6 +1330,24 @@ textarea {
             justify-content: center;
             align-items: center;
             height: 100%;
+        }
+
+        .hero-section .content p {
+            font-size: 1.2857142857rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            line-height: 1.875rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        .hero-section .content h1 {
+            font-size: 2.2815rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: .5rem;
+            font-weight: 600;
+
+            margin-bottom: .5rem;
         }
 
         /* Fade-in effect for text */
@@ -1360,12 +1461,13 @@ textarea {
             font-size: 2rem;
             margin-bottom: 10px;
             color: white;
+            padding-right: 5px;
         }
 
         .hero-section .column .text {
             font-size: 1rem;
             color: white;
-            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         /* New Section for Four Columns (For Small Screens) */
@@ -1435,34 +1537,37 @@ textarea {
                 margin-bottom: 20px;
             }
         }
+
         .chapter567 {
-    text-align: center;
-    padding: 40px 20px;
-    
-}
+            text-align: center;
+            padding: 40px 20px;
 
-.chapter567-header h2 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 10px; /* Space below the heading */
-}
+        }
 
-.chapter567-header p {
-    font-size: 18px;
-    color: #555;
-}
+        .chapter567-header h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+            /* Space below the heading */
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .chapter567-header h2 {
-        font-size: 28px; /* Smaller heading on mobile */
-    }
+        .chapter567-header p {
+            font-size: 18px;
+            color: #555;
+        }
 
-    .chapter567-header p {
-        font-size: 16px; /* Smaller subheading on mobile */
-    }
-}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chapter567-header h2 {
+                font-size: 28px;
+                /* Smaller heading on mobile */
+            }
 
+            .chapter567-header p {
+                font-size: 16px;
+                /* Smaller subheading on mobile */
+            }
+        }
     </style>
 </head>
 
@@ -1475,9 +1580,9 @@ textarea {
         <nav class="nav-links">
             <ul>
                 <li><a href="Index.html">Home</a></li>
-              
+
                 <li><a href="Pooja.html">Pooja</a></li>
-            
+
                 <li><a href="Contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -1518,9 +1623,9 @@ textarea {
     <div class="sliding-menu" id="slidingMenu">
         <ul>
             <li><a href="Home.html">Home</a></li>
-         
+
             <li><a href="Pooja.html">Pooja</a></li>
-            
+
             <li><a href="ContactUs.html">Contact Us</a></li>
             <li><a href="tel:+918310214624"><button class="button-86">Call Now</button></a></li>
         </ul>
@@ -1582,7 +1687,7 @@ textarea {
         </div>
     </section>
     <section id="section2">
-        <h2>Why Gokarna:</h2>
+        <h2>Why Gokarna:</h2><br>
         <p>
             Gokarna, often referred to as the 'Kashi of the South,' holds immense spiritual significance for ancestral
             rituals such as Narayanbali, Nagabali, and PitruDosha Nivarana. Home to the sacred Mahabaleshwar Temple and
@@ -1605,15 +1710,15 @@ textarea {
         <br>
         <p>We specialise in individual and personalised pujas and<br><br>
             rituals like pujas for spiritual progress, good health, and success in profession.</p>
-            <br>
+        <br>
         <br>
     </section>
     <section class="responsive-section">
-        
+
         <div class="column">
-           
+
             <div class="box">
-              
+
                 <img src="1736422675161.jpg" alt="Image 1" class="img">
                 <hr>
                 <h3>Narayanbali Pooja</h3>
@@ -1648,24 +1753,24 @@ textarea {
         <h1>Gallery</h1>
         <div class="underline"></div> <!-- Horizontal line -->
         <div class="gallery-container">
-          <div class="gallery-item"><img src="1736422675161.jpg" alt="Image 1"></div>
-          <div class="gallery-item"><img src="1736422675201.jpg" alt="Image 2"></div>
-          <div class="gallery-item"><img src="1736422675442.jpg" alt="Image 3"></div>
-          <div class="gallery-item"><img src="1736422675191.jpg"alt="Image 4"></div>
-          <div class="gallery-item"><img src="1736422675161.jpg" alt="Image 1"></div>
-          <div class="gallery-item"><img src="1736422675201.jpg" alt="Image 2"></div>
-          <div class="gallery-item"><img src="1736422675442.jpg" alt="Image 3"></div>
-          <div class="gallery-item"><img src="1736422675191.jpg"alt="Image 4"></div>
+            <div class="gallery-item"><img src="1736422675161.jpg" alt="Image 1"></div>
+            <div class="gallery-item"><img src="1736422675201.jpg" alt="Image 2"></div>
+            <div class="gallery-item"><img src="1736422675442.jpg" alt="Image 3"></div>
+            <div class="gallery-item"><img src="1736422675191.jpg" alt="Image 4"></div>
+            <div class="gallery-item"><img src="1736422675161.jpg" alt="Image 1"></div>
+            <div class="gallery-item"><img src="1736422675201.jpg" alt="Image 2"></div>
+            <div class="gallery-item"><img src="1736422675442.jpg" alt="Image 3"></div>
+            <div class="gallery-item"><img src="1736422675191.jpg" alt="Image 4"></div>
         </div>
-      </section>
-      
-      <section class="chapter567">
+    </section>
+
+    <section class="chapter567">
         <div class="chapter567-header">
             <h2>Testimonial</h2>
             <p>Empowering healthcare professionals through cutting-edge technology and training solutions</p>
         </div>
     </section>
-    
+
     <section class="testimonial-section">
         <div class="testimonial-container">
             <div class="testimonial" style="left: 0%;">
@@ -1786,32 +1891,32 @@ textarea {
 
 
 
-  
+
     <!-- popup -->
-   <!-- popup -->
-   <script>
-    // Close Button Functionality
-    document.getElementById('closeBtn').onclick = function () {
-        document.getElementById('popupOverlay').style.display = 'none';
-    };
+    <!-- popup -->
+    <script>
+        // Close Button Functionality
+        document.getElementById('closeBtn').onclick = function () {
+            document.getElementById('popupOverlay').style.display = 'none';
+        };
 
-    // WhatsApp Integration
-    function sendToWhatsApp() {
-        const name = document.getElementById('name').value;
-        const contact = document.getElementById('contact').value;
-        const poojaType = document.getElementById('poojaType').value;
-        const date = document.getElementById('date').value;
-        const details = document.getElementById('details').value;
+        // WhatsApp Integration
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const poojaType = document.getElementById('poojaType').value;
+            const date = document.getElementById('date').value;
+            const details = document.getElementById('details').value;
 
-        if (name && contact && poojaType && date) {
-            const message = `Name: ${name}%0AContact: ${contact}%0APooja Type: ${poojaType}%0APreferred Date: ${date}%0ADetails: ${details}`;
-            window.open(`https://wa.me/918310214624?text=${message}`, '_blank');
-        } else {
-            alert('Please fill all required fields.');
+            if (name && contact && poojaType && date) {
+                const message = `Name: ${name}%0AContact: ${contact}%0APooja Type: ${poojaType}%0APreferred Date: ${date}%0ADetails: ${details}`;
+                window.open(`https://wa.me/918310214624?text=${message}`, '_blank');
+            } else {
+                alert('Please fill all required fields.');
+            }
         }
-    }
 
-</script>
+    </script>
     <!-- 
 scroll animation -->
     <script>
@@ -1836,8 +1941,8 @@ scroll animation -->
         });
 
     </script>
-     <!-- testimonial -->
-     <script>
+    <!-- testimonial -->
+    <script>
         let currentIndex = 0;
 
         const testimonials = document.querySelectorAll('.testimonial');
