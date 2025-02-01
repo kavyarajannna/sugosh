@@ -21,7 +21,23 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.838)),
+                url('Screenshot%202025-01-30%20233743.png');
+            background-size: auto;
+            color: #636b46;
+            /* Ensures repeating works */
+            background-repeat: repeat;
+            /* Repeats the image */
+            background-position: top left;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: auto;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
         }
 
         /* Header */
@@ -917,38 +933,80 @@
         }
 
         /* Hero Section */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            /* Full screen height */
-            background-color: rgb(240 231 216);
-            /* Background image */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0;
-            /* Removed padding to make it cover full screen */
-            color: #990000;
-        }
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Adjusted height for better mobile compatibility */
+    background-color: rgb(240, 231, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    color: #990000;
+}
 
-        .hero-content {
-            max-width: 800px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
+.hero-content {
+    max-width: 90%; /* Adjusts width for better responsiveness */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
 
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+/* Typography Adjustments */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
 
-        .hero-content p {
-            font-size: 1.5rem;
-            line-height: 1.8;
-        }
+.hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        height: 50vh; /* Adjusted height for tablets */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 45vh; /* Adjusted height for smaller screens */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh; /* Adjusted height for mobile screens */
+        padding: 0 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
 
         /* Section Styles */
         .section {
