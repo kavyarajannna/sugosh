@@ -25,6 +25,7 @@
             background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.838)),
                 url('Screenshot%202025-01-30%20233743.png');
             background-size: auto;
+            color: #636b46;
             /* Ensures repeating works */
             background-repeat: repeat;
             /* Repeats the image */
@@ -378,9 +379,10 @@
 
         /* Horizontal Line Animation */
         footer .line {
+
             width: 100%;
             height: 2px;
-            background-color: #F3C623;
+            background-color: #636b46;
             /* opacity: 0; */
             transform: scaleX(0);
             animation: lineAnimation 1s forwards;
@@ -603,7 +605,7 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                background-color: #10375C;
+                background-color: rgb(240 231 216);
                 justify-content: space-around;
                 align-items: center;
                 padding: 10px 0;
@@ -613,7 +615,7 @@
 
             .button-call-now,
             .button-whatsapp {
-                background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+                /* background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%); */
                 border-radius: .5rem;
                 color: #FFFFFF;
                 display: flex;
@@ -636,21 +638,21 @@
             }
 
             .button-call-now {
-                background-color: #ff4081;
+                background-color: #cda34f ;
                 /* Custom color for call button */
             }
 
             .button-whatsapp {
-                background-color: #25D366;
+                background-color: #cda34f ;
                 /* WhatsApp color */
             }
 
             .button-call-now:hover {
-                background-color: #f50057;
+                background-color: #636b46;
             }
 
             .button-whatsapp:hover {
-                background-color: #128C7E;
+                background-color: #636b46;
             }
         }
 
@@ -682,11 +684,11 @@
             /* Horizontally centers the text */
             margin: 0 0 20px 0;
             /* Adds space below the heading */
-            color: #10375C;
+            color: #990000;
         }
 
         #popupForm {
-            background: linear-gradient(135deg, rgba(255, 165, 0, 0.9), rgba(255, 255, 0, 0.9));
+            background: linear-gradient(135deg, #e1c99c, rgb(240 231 216));
             /* Orange-yellow light gradient */
             padding: 20px;
             /* Reduced padding */
@@ -750,7 +752,7 @@
             margin-bottom: 5px;
             /* Reduced margin below fields */
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #636b46;
             box-sizing: border-box;
             font-size: 16px;
         }
@@ -797,7 +799,7 @@
             transform: translate(0%, 0%);
             width: 100%;
             height: 100%;
-            background: #28282d;
+            background: #636b46;
             border-radius: 10px;
         }
 
@@ -863,7 +865,7 @@
         /* Scoped styles inside .testimonial-section */
         .testimonial-section {
             width: 100%;
-            height: 50vh;
+            /* height: 50vh; */
             /* Optional: Set the height to fill the entire viewport */
             display: flex;
             justify-content: center;
@@ -953,89 +955,97 @@
             right: 10px;
         }
 
-        /* Gallery Section Styles */
-        .gallery565 {
-            padding: 50px 20px;
-            text-align: center;
+       /* Gallery Section */
+.gallery565 {
+    padding: 50px 5%;
+    text-align: center;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
 
-        }
+/* Heading */
+.gallery565 h1 {
+    text-align: center;
+    font-size: 2.2857142858rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: #373f27;
+    font-family: Open Sans, sans-serif;
+}
 
+/* Horizontal Line Animation */
+.underline {
+    width: 60px;
+    height: 3px;
+    background-color: #000;
+    margin: 20px auto;
+    transform: scaleX(0);
+    animation: lineAnimation 1s forwards;
+}
 
-        .gallery565 h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+@keyframes lineAnimation {
+    to {
+        transform: scaleX(1);
+    }
+}
 
-        /* Horizontal Line Animation */
-        .underline {
-            width: 60px;
-            height: 3px;
-            background-color: #000;
-            margin: 20px auto;
-            transform: scaleX(0);
-            animation: lineAnimation 1s forwards;
-        }
+/* Gallery Grid */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 100%;
+}
 
-        @keyframes lineAnimation {
-            to {
-                transform: scaleX(1);
-            }
-        }
+/* Gallery Item */
+.gallery-item {
+    width: 100%;
+    max-width: 280px; /* Ensures items don’t stretch */
+    height: 200px; /* Adjusted for consistency */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
 
-        /* Gallery Container */
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            justify-items: center;
-        }
+/* Image Styling */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .gallery-item {
-            width: 350px;
-            /* Increased width */
-            height: 250px;
-            /* Reduced height */
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: transform 0.3s ease-in-out;
-        }
+/* Hover Effects */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease-in-out;
-        }
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
 
-        /* Hover Effect */
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
+/* Responsive Grid Adjustments */
+@media (max-width: 1200px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+    }
+}
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
+@media (max-width: 900px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    }
+}
 
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .gallery-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 900px) {
-            .gallery-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .gallery-container {
-                grid-template-columns: 1fr;
-            }
-        }
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* 1 image per row */
+    }
+}
 
         /* Section Styles */
 
@@ -1059,7 +1069,7 @@
             position: relative;
             width: 100%;
             max-width: 400px;
-            background-color: #f9f9f9;
+            background-color: rgb(240 231 216);
             padding: 20px 20px 40px 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1071,7 +1081,7 @@
         }
 
         .box h3 {
-            color: #1d2833;
+            color: #373f27;
             font-size: 1.5rem;
             font-weight: 600;
             line-height: 2rem;
@@ -1108,7 +1118,7 @@
             font-size: 1.2857142858rem;
             font-weight: 400;
             line-height: 1.3;
-            color: #1d2833;
+            color: #373f27;
             font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
             margin-bottom: 20px;
             flex-grow: 1;
@@ -1120,7 +1130,7 @@
             /* Increased padding for height */
             font-size: 14px;
             /* Font size */
-            background-color: #38D2D2;
+            background-color: #cda34f;
             background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
             box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
             border-radius: 14px;
@@ -1143,7 +1153,7 @@
         }
 
         .button-91:hover {
-            background-color: #2ab8b8;
+            background-color: #75973a;
         }
 
         /* Responsive Design */
@@ -1187,14 +1197,14 @@
             font-size: 1.2857142858rem;
             font-weight: 400;
             line-height: 1.3;
-            color: #1d2833;
+            color: #373f27;
             font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            margin-bottom: 20px;
+            margin-bottom: 1px;
             flex-grow: 1;
         }
 
         .types-pooja-heading h2 {
-            color: #1d2833;
+            color: #373f27;
             font-size: 2.2875rem;
             font-weight: 600;
             line-height: 2rem;
@@ -1217,11 +1227,11 @@
         }
 
         #section2 p {
-text-align: justify;
+            text-align: justify;
             font-size: 1.2857142857rem;
             line-height: 1.875rem;
             font-weight: 400;
-            color: #1d2833;
+            color: #373f27;
             font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
             opacity: 0;
             transform: translateY(30px);
@@ -1234,7 +1244,7 @@ text-align: justify;
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: .5rem;
-            color: #1d2833;
+            color: #373f27;
             font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
             opacity: 0;
             transform: translateY(30px);
@@ -1265,6 +1275,7 @@ text-align: justify;
             width: 100%;
             height: 60vh;
             overflow: hidden;
+
         }
 
         /* Hero background image animation */
@@ -1292,15 +1303,15 @@ text-align: justify;
             }
 
             50% {
-                background-image: url('/ASSETS/images.jpg');
+                background-image: url('images.jpg');
             }
 
             75% {
-                background-image: url('/ASSETS/images.jpg');
+                background-image: url('images.jpg');
             }
 
             100% {
-                background-image: url('/ASSETS/images.jpg');
+                background-image: url('images.jpg');
             }
         }
 
@@ -1311,7 +1322,7 @@ text-align: justify;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgb(240 231 216);
             z-index: 2;
             display: flex;
             align-items: center;
@@ -1360,10 +1371,12 @@ text-align: justify;
         /* Stagger the animation for the text elements */
         .hero-section .content h1 {
             animation-delay: 0.5s;
+            color: #6e2a36;
         }
 
         .hero-section .content p {
             animation-delay: 1s;
+            color: #636b46;
         }
 
         /* Button Style */
@@ -1465,8 +1478,8 @@ text-align: justify;
         }
 
         .hero-section .column .text {
-            font-size: 1rem;
-            color: white;
+            font-size: 1.41rem;
+            color: #cda34f;
             margin-bottom: 10px;
         }
 
@@ -1494,7 +1507,7 @@ text-align: justify;
         }
 
         .columns-section .column .text {
-            font-size: 1rem;
+            font-size: 1.5rem;
             margin-top: 10px;
         }
 
@@ -1534,26 +1547,39 @@ text-align: justify;
 
             .columns-section .column {
                 width: 100%;
-                margin-bottom: 20px;
+                margin-bottom: 1px;
             }
         }
 
         .chapter567 {
             text-align: center;
-            padding: 40px 20px;
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 1px;
 
         }
 
         .chapter567-header h2 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 10px;
+            text-align: center;
+            font-size: 2.2857142858rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: .5rem;
+            color: #373f27;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
             /* Space below the heading */
         }
 
         .chapter567-header p {
-            font-size: 18px;
-            color: #555;
+            text-align: center;
+            font-size: 1.2857142857rem;
+            line-height: 1.875rem;
+            font-weight: 400;
+            color: #373f27;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+          
         }
 
         /* Responsive Design */
@@ -1567,6 +1593,14 @@ text-align: justify;
                 font-size: 16px;
                 /* Smaller subheading on mobile */
             }
+        }
+
+        .custom-hr {
+            width: 100%;
+            height: 20px;
+            /* Adjust height as needed */
+            background: url('separator-1.png') repeat-x;
+            border: none;
         }
     </style>
 </head>
@@ -1688,6 +1722,7 @@ text-align: justify;
     </section>
     <section id="section2">
         <h2>Why Gokarna:</h2><br>
+
         <p>
             Gokarna, often referred to as the 'Kashi of the South,' holds immense spiritual significance for ancestral
             rituals such as Narayanbali, Nagabali, and PitruDosha Nivarana. Home to the sacred Mahabaleshwar Temple and
@@ -1699,7 +1734,8 @@ text-align: justify;
             for ancestral worship.
         </p>
     </section>
-    <hr>
+    <hr class="custom-hr">
+
     <!-- Wrapping everything in the testimonial-section -->
 
     <!-- First Row -->
@@ -1713,6 +1749,7 @@ text-align: justify;
         <br>
         <br>
     </section>
+
     <section class="responsive-section">
 
         <div class="column">
@@ -1744,11 +1781,12 @@ text-align: justify;
                 <img src="1736422675201.jpg" alt="Image 3" class="img">
                 <hr>
                 <h3>PitruDosha Nivarana</h3>
-                <p>Alleviate ancestral doshas for familial prosperity...</p>
+                <p>Alleviate ancestral doshas for familial prosperity and ...</p>
                 <button class="button-91" onclick="window.location.href='page3.html'">Read More</button>
             </div>
         </div>
     </section>
+    <hr class="custom-hr">
     <section class="gallery565">
         <h1>Gallery</h1>
         <div class="underline"></div> <!-- Horizontal line -->
@@ -1763,10 +1801,10 @@ text-align: justify;
             <div class="gallery-item"><img src="1736422675191.jpg" alt="Image 4"></div>
         </div>
     </section>
-
+    <hr class="custom-hr">
     <section class="chapter567">
         <div class="chapter567-header">
-            <h2>Testimonial</h2>
+            <h2>Testimonial</h2><br>
             <p>Empowering healthcare professionals through cutting-edge technology and training solutions</p>
         </div>
     </section>
@@ -1787,7 +1825,7 @@ text-align: justify;
         </div>
     </section>
 
-
+    <hr class="custom-hr">
 
 
 
